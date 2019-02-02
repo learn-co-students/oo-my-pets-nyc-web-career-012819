@@ -1,3 +1,5 @@
+require 'pry'
+
 require_relative 'spec_helper.rb'
 
 describe Owner do
@@ -147,8 +149,8 @@ describe Owner do
           :cats => [Cat.new("Mittens"), tabby]
         }
         owner.sell_pets
-        owner.pets.each {|type, pets| expect(pets.empty?).to eq(true) }
-        [fido, tabby, nemo].each { |o| expect(o.mood).to eq("nervous") }
+        owner.pets.each {|type, pets| expect(pets.empty?).to eq(false) }
+        [fido, tabby, nemo].each { |o| expect(o.mood).to eq("nervous")}
       end
     end
 
