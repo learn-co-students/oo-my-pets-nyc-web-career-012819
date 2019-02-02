@@ -69,14 +69,11 @@ def feed_fish
 end
 
 def sell_pets
-  self.pets[:fishes].map do |fish|
-    fish.mood="nervous"
-  end
-  self.pets[:dogs].map do |dog|
-    dog.mood="nervous"
-  end
-  self.pets[:cats].map do |cat|
-    cat.mood="nervous"
+  self.pets.each do |type, animals|
+    animals.each do |animal|
+      animal.mood="nervous"
+    end
+    animals.clear
   end
 
 end
