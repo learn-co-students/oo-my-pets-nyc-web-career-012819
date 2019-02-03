@@ -12,7 +12,7 @@ def initialize(name)
 end
 
 def say_species
-  "I am a human."
+  "I am a #{species}."
 end
 
 def self.all
